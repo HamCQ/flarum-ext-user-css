@@ -36,6 +36,7 @@ class SaveCssMiddleware
                 ".js", "$.", "axios", "<?php", "<script>",
                 "</script>", "?>", "behavior:", "script",
                 "$(", "@namespace", "document", "window",
+                "app.", "$"
             ], "",$temp);
             $temp = preg_replace('/[a-zA-Z0-9_-]+\.[a-zA-Z0-9.-]+/',"",$temp);
 
