@@ -20,7 +20,11 @@ app.initializers.add('hamcq/usercss', () => {
   })
 
   extend(UserPage.prototype, 'onremove', function () { 
-    document.getElementById("my_style").remove();
+    var e = document.getElementById("my_style");
+    if(!e){
+      return;
+    }
+    e.remove();
   })
 
   extend(SettingsPage.prototype, 'settingsItems', function (items) {
