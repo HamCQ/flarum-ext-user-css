@@ -26,6 +26,13 @@ class CssResonse extends Response
             return $html;
         }
 
+        if($html==""){
+            $body = new Stream('php://temp', 'wb+');
+            $body->write("");
+            $body->rewind();
+            return $body;
+        }
+
         if (! is_string($html)) {
             throw new Exception\InvalidArgumentException(sprintf(
                 'Invalid content (%s) provided to %s',
